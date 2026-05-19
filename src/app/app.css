@@ -1,0 +1,316 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #333;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove click flash */
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, lightgreen, rgb(255,0,183));
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #1e3a5f;
+}
+
+.header p {
+  margin-top: 8px;
+  color: #555;
+}
+
+/* LANDING PAGE */
+.landing-page {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, lightyellow, #d9ecff);
+  transition: transform 0.3s ease;
+}
+
+.landing-page:hover {
+  transform: translateY(-4px);
+}
+
+
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+.hero-btn {
+  margin-top: 20px;
+  padding: 20px 24px;
+  border: none;
+  background: #facc15;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 36px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin: 20px;
+  padding: 10px 22px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #374151;
+  transform: translateX(-5px);
+}
+/* This centers the button and limits the green area */
+.button-wrapper {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  padding: 20px 0;
+  width: 100%;
+}
+
+.submit-btn {
+  /* Controlled Size */
+  width: 150px;       /* Set a specific width */
+  height: 45px;      /* Set a specific height */
+  
+  /* Styling */
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  
+  /* Resetting flex behavior */
+  flex-grow: 0; 
+  align-self: center;
+}
+
+/* Colors */
+.add-mode {
+  background-color: #28a745; /* Success Green */
+  color: white;
+}
+
+.update-mode {
+  background-color: #007bff; /* Info Blue */
+  color: white;
+}
+
+/* Hover effect to prove it's clickable */
+.submit-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+/* DASHBOARD */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.dash-card {
+  background: orange;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 220px; /* ✅ FIXED */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* FORM BACKGROUND */
+.form-section-bg {
+  width: 100%; /* ✅ FIXED */
+  padding: 50px 0;
+  background: linear-gradient(135deg, #ffe4e1, #ffb6c1);
+  display: flex;
+  justify-content: center;
+}
+
+/* FORM CONTAINER */
+.form-container {
+  margin: 30px auto;
+  max-width: 700px; /* ✅ FIXED */
+  width: 100%;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  border-left: 10px solid #ffa500;
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* TABLE */
+.movie-form-table {
+  width: 100%; /* ✅ FIXED */
+}
+
+/* INPUT */
+.form-input {
+  width: 100%; /* ✅ FIXED */
+  padding: 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* ACTION */
+.action-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.rating-input {
+  flex: 1;
+}
+
+/* BUTTON */
+.submit-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*movie details*/
+.form-container {
+  background: lightcyan;
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 500px; /* Limits width so it doesn't stretch */
+  margin: 0 auto;   /* Centers the card */
+  box-shadow: 0 4px 8px purple;
+}
+
+.submit-btn {
+  width: 100%;      /* Makes the button span the width of the form */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: blue; /* Think Pink */
+  font-weight: bold;
+}
+
+.add-mode { background-color: #28a745; } /* Green for Add */
+.update-mode { background-color: #007bff; } /* Blue for Update */
+
+
+.update-mode {
+  background-color: #007bff;
+}
+
+/* MOVIE GRID */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ FIXED */
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  width: 230px;
+  padding: 15px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.movie-card img {
+  width: 120%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+}
+
+/* TEXT */
+.rating {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.edit-btn {
+  background: #ffecd2;
+  color: blue;
+  border: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: orange;
+  color: red;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.language-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.language-field label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.language-select {
+  width: 100%;
+  height: 40px;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid pink;
+}
