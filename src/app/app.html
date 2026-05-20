@@ -1,0 +1,127 @@
+<!-- LANDING PAGE -->
+<div *ngIf="!showMovies">
+  <div class="header">
+   
+   
+>   <h1>🎬 Movie Review And Rating System :))</h1>
+    <p>@Your one-stop platform for movie ratings & reviews.... </p>
+    <p>#$ Top Telugu && Hindi Movies</p>
+    <p> “Every movie tells a story — your review gives it a voice.”</p>
+    <u>“Welcome to the ultimate movie club, where every blockbuster meets honest ratings.:)!"</u>
+  </div>
+
+  <section class="landing-page">
+    <div class="hero-text">
+      <h2>Welcome To Movies!! 🍿</h2>
+      <p>Discover, Review, and Rate your favorite films.</p>
+      <i>Blockbuster movies, action, family entertainment, and endless fun — smile and enjoy the cinematic journey!</i>
+      <p>Smile AND Enjoy!!!! :) Movies ha ha ha...... :)</p>
+      
+      <button class="back-btn" (click)="goToMovies()">⬅ Get Started</button>
+    </div>
+  </section>
+</div>
+
+<!-- MOVIE PAGE -->
+<div *ngIf="showMovies">
+
+  <button class="back-btn" (click)="goBack()">⬅ Back</button>
+  
+<div class="dashboard">
+    <div class="dash-card">
+      <h3>{{ movies.length }}</h3>
+      <p>Total Movies</p>
+    </div>
+ 
+    <div class="dash-card">
+      <h3>{{ movies.length ? (movies.reduce((a,b)=>a+b.rating,0)/movies.length).toFixed(1) : 0 }}</h3>
+      <p>Average Rating</p>
+    </div>
+    <div class="dash-card">
+      <h3>{{ movies.length ? movies.reduce((a,b)=>a.rating>b.rating?a:b).name : 'N/A' }}</h3>
+      <p>Top Rated</p>
+    </div>
+  </div>
+
+  <div class="form-section-bg">
+    <div class="form-container">
+      <h2 class="form-title">🎬 Movie Details</h2>
+
+      <div class="form-cell">
+        <label>Movie Name</label>
+        <input type="text" class="form-input" [(ngModel)]="movie.name">
+      </div>
+
+      <div class="form-cell">
+        <label>Review</label>
+        <input type="text" class="form-input" [(ngModel)]="movie.review">
+      </div>
+
+      <div class="form-cell">
+        <label>Rating</label>
+        <input type="number" class="form-input" [(ngModel)]="movie.rating">
+      </div>
+     <!----<div class="form-cell"></div>
+      
+  <label>Language</label>
+   <div class="language-row">
+   <input type="text" class="form-input" [(ngModel)]="movie.language" placeholder="Enter language">
+
+  <select [(ngModel)]="movie.language" class="language-select">
+    <option value="">Select Language</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Tamil">Tamil</option>
+    <option value="English">English</option>
+    <option value="Kannada">Kannada</option>
+    <option value="Malayalam">Malayalam</option>
+  </select>
+</div>-->
+<div class="language-field">
+  <label>Language</label>
+
+  <select [(ngModel)]="movie.language" class="language-select">
+    <option value="">Select Language</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Tamil">Tamil</option>
+    <option value="English">English</option>
+    <option value="K drama">K drama</option>
+    <option value="Malayalam">Malayalam</option>
+  </select>
+</div>
+   
+ <div class="form-cell">
+  <label>Movie Poster URL</label>
+  <input 
+    type="text" 
+    class="form-input" 
+    [(ngModel)]="movie.image" 
+    placeholder="Paste image link here">
+</div>
+        <hr>
+<div class="button-wrapper">
+        <button class="submit-btn"[ngClass]="editId ? 'update-mode' : 'add-mode'"(click)="saveMovie()">
+          {{ editId ? 'Update Movie' : 'Add Movie' }}
+        </button>
+      </div>
+      
+    </div> </div> <div class="movie-section">
+    <h2>🎥 Movie Collection</h2>
+    <div class="movie-grid">
+      <div class="movie-card" *ngFor="let m of movies">
+        <img [src]="m.image" alt="movie" class="movie-image">
+        <h3>{{ m.name }}</h3>
+        <p class="rating">⭐ {{ m.rating }}/10</p>
+        <p>{{ m.review }}</p>
+         <p class="language">
+   
+        <strong>Language:</strong> {{ m.language || 'N/A' }}
+<div class="actions">
+          <button class="edit-btn" (click)="editMovie(m)">Edit</button>
+          <button class="delete-btn" (click)="deleteMovie(m.id || '')">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
