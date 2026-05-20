@@ -10,9 +10,7 @@ import com.movieSystem.repository.MovieRepository;
 
 @Service
 public class MovieService {
-
-
-	    @Autowired
+  @Autowired
 	    private MovieRepository repository;
 
 	    // ✅ READ
@@ -27,12 +25,10 @@ public class MovieService {
 	            throw new RuntimeException("Movie already exists with name: " + movie.getName());
 	        }
 	        
-
-	        return repository.save(movie);
+   return repository.save(movie);
 	    }
 	  
-
-	 public void deleteMovie(String id) {
+ public void deleteMovie(String id) {
 
 		    if (!repository.existsById(id)) {
 		        throw new RuntimeException("Movie not found with id: " + id);
@@ -41,8 +37,7 @@ public class MovieService {
 		    repository.deleteById(id);
 		}
 	
-
-	    // ✅ UPDATE
+ // ✅ UPDATE
 	  public Movie updateMovie(String id, Movie movie) {
 		    return repository.findById(id).map(existingMovie -> {
 		        existingMovie.setName(movie.getName());

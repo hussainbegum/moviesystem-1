@@ -14,6 +14,7 @@ public class Movie {
     private String review;
     private double rating;
     private String image;
+    private String language;
 
     public Movie() {
     }
@@ -56,6 +57,13 @@ public class Movie {
 
     public void setImage(String image) {
         this.image = image;
+    }
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }
 

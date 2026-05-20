@@ -7,7 +7,7 @@ import com.movieSystem.entity.Movie;
 
 public interface MovieRepository extends MongoRepository< Movie, String > {
 	boolean existsByNameIgnoreCase(String name);
-
+    
 }
 
 	
